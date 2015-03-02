@@ -30,14 +30,15 @@ a {
 body {
   background: #fff;
   color: #515152;
-  font: 15px/1.5em "Open Sans", helvetica, arial;
+  font: 16px/1.6em "Open Sans", helvetica, arial;
   -webkit-font-smoothing: antialiased;
 }
 hr {
   border: none;
   border-top: 1px solid rgba(0,0,0,0.1);
   margin: 50px auto;
-  width: 920px;
+  max-width: 1100px;
+  width: 100%;
 }
 #header,
 #content,
@@ -47,11 +48,12 @@ hr {
   width: 100%;
 }
 #header {
-  padding: 100px 0 64px;
+  padding: 100px 0 80px;
   text-align: center;
 }
 #header .skills-list {
   list-style: none;
+  margin-top: 2em;
   text-align: center;
 }
 #header .skills-list .skill {
@@ -59,21 +61,22 @@ hr {
   display: inline-block;
   font-size: 0.8rem;
   margin: 0 10px;
-  padding-left: 24px;
+  padding-left: 25px;
   position: relative;
   text-transform: uppercase;
 }
 #header .skills-list .skill:before {
-  content: '';
-  display: block;
-  border: 1px solid rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.1);
   -webkit-border-radius: 16px;
   border-radius: 16px;
+  content: '';
+  display: block;
   height: 16px;
   left: 0;
   position: absolute;
   width: 16px;
-  top: 2px;
+  top: 4px;
 }
 #logo {
   background-image: url("/img/logo.png");
@@ -96,26 +99,30 @@ hr {
 }
 #footer {
   color: rgba(0,0,0,0.4);
+  padding: 0 0 2em;
   text-align: center;
 }
+#footer .credits {
+  font-size: 0.9rem;
+}
 #work-list {
-  margin: 0 0 -20px -35px;
+  margin: 0 0 -20px -75px;
   position: relative;
-  width: 880px;
+  width: 960px;
 }
 #work-list .item {
   background: #eee;
   border: 1px solid rgba(0,0,0,0.1);
-  cursor: pointer;
+  cursor: zoom-in;
   display: inline-block;
-  height: 150px;
+  height: 225px;
   margin: 0 20px 20px 0;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
   overflow: hidden;
   position: relative;
-  width: 200px;
+  width: 300px;
   -webkit-transform: scale(0.8);
   -moz-transform: scale(0.8);
   -o-transform: scale(0.8);
@@ -183,7 +190,7 @@ hr {
   background-size: 100% auto;
   -webkit-box-shadow: 0 3px 12px rgba(0,0,0,0.25);
   box-shadow: 0 3px 12px rgba(0,0,0,0.25);
-  height: 300px;
+  height: 450px;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
@@ -198,7 +205,7 @@ hr {
   -o-transition: scale 0.1s ease-in-out, opacity 0.1s ease-in-out;
   -ms-transition: scale 0.1s ease-in-out, opacity 0.1s ease-in-out;
   transition: scale 0.1s ease-in-out, opacity 0.1s ease-in-out;
-  width: 400px;
+  width: 600px;
 }
 #work-preview.show {
   opacity: 1;

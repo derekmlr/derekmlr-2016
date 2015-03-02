@@ -37,7 +37,7 @@ DMLR.dribbbleShots.prototype = {
 		limit = (limit > data.length) ? data.length : limit;
 		for(i=0;i < limit;i++) {
 			var html = '<li class="item">'+
-			           '<img src="'+data[i].image_teaser_url+'" class="thumb">'+
+			           '<img src="'+data[i].image_url+'" class="thumb">'+
 			           '<span class="meta" data-full="'+data[i].image_url+'">'+
 			           '<h2>'+data[i].title+'</h2>'+
 			           //jQuery(data[i].description).text()+
@@ -55,8 +55,8 @@ DMLR.dribbbleShots.prototype = {
 			$(this).find('.meta')
 				.on('mousemove', function(e){
 					var that = this;
-					var xPos = ((e.pageX+420) > $(window).width()) ? (e.pageX-420) : e.pageX+20;
-					var yPos = ((e.pageY+300) > $(window).height()) ? (e.pageY-320) : e.pageY+20;
+					var xPos = ((e.pageX+620) > $(window).width()) ? (e.pageX-620) : e.pageX+20;
+					var yPos = ((e.pageY+450) > $(window).height()) ? (e.pageY-470) : e.pageY+20;
 					$('#work-preview').addClass('show').css({
 					   left:  xPos,
 					   top:   yPos,
