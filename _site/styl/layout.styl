@@ -6,9 +6,14 @@
 a
 	color:$linkColor
 	text-decoration:$linkDecoration
+	&:hover
+		text-decoration:underline
 	
 body
 	background:$bg
+	image '/img/wolf-bg.png'
+	background-size:100% auto
+	background-repeat:no-repeat
 	color:$textColor
 	font:16px/1.6em "Open Sans",helvetica,arial
 	-webkit-font-smoothing: antialiased
@@ -16,7 +21,7 @@ body
 hr
 	border:none
 	border-top:1px solid $borderColor
-	margin:50px auto
+	margin:40px auto
 	max-width:1100px
 	width:100%
 
@@ -28,7 +33,7 @@ hr
 	width:100%
 	
 #header
-	padding:100px 0 80px
+	padding:120px 0 80px
 	text-align:center
 	.skills-list
 		list-style:none
@@ -62,29 +67,52 @@ hr
 	margin:0 0 20px
 	text-indent:-9999px
 	width:120px
-
-#work
-	header
-		display:none
 		
 #footer
 	color:$textAltColor
-	padding:0 0 2em
 	text-align:center
+	#social-list
+		list-style:none
+		text-align:center
+		.social
+			background:#eee
+			border:1px solid $borderColor
+			border-radius:32px
+			display:inline-block
+			height:64px
+			margin:20px 10px
+			width:64px
 	.credits
+		display:block
 		font-size:0.9rem
+		margin:1em 0 2em
+		
+
+
+#case-studies,
+#work
+	header
+		display:none
 
 // Portfolio work list
-#work-list
+.work-list
 	margin:0 0 -20px -75px
+	padding:0 0 20px
 	position:relative
 	width:960px
-	.item
+	clearfix()
+	&.studies-list
+		.work
+			cursor:pointer
+			height:250px
+			width:460px
+	.work
 		background:#eee
 		border:1px solid $borderColor
 		cursor:zoom-in
-		display:inline-block
-		height:225px
+		display:block
+		height:226px
+		float:left
 		margin:0 20px 20px 0
 		opacity:0
 		overflow:hidden
@@ -105,7 +133,7 @@ hr
 			max-width:100%
 			width:100%
 		.meta
-			background:rgba(255,255,255,0.88)
+			background:rgba(255,255,255,0.8)
 			bottom:0
 			left:0
 			opacity:0

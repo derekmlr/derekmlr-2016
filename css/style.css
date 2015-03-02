@@ -27,16 +27,32 @@ a {
   color: #47aceb;
   text-decoration: none;
 }
+a:hover {
+  text-decoration: underline;
+}
 body {
   background: #fff;
+  background-image: url("/img/wolf-bg.png");
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
   color: #515152;
   font: 16px/1.6em "Open Sans", helvetica, arial;
   -webkit-font-smoothing: antialiased;
 }
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
+  body {
+    background-image: url("/img/wolf-bg@2x.png");
+    -webkit-background-size: auto auto;
+    -moz-background-size: auto auto;
+    background-size: auto auto;
+  }
+}
 hr {
   border: none;
   border-top: 1px solid rgba(0,0,0,0.1);
-  margin: 50px auto;
+  margin: 40px auto;
   max-width: 1100px;
   width: 100%;
 }
@@ -48,7 +64,7 @@ hr {
   width: 100%;
 }
 #header {
-  padding: 100px 0 80px;
+  padding: 120px 0 80px;
   text-align: center;
 }
 #header .skills-list {
@@ -94,28 +110,60 @@ hr {
     background-size: auto auto;
   }
 }
+#footer {
+  color: rgba(0,0,0,0.4);
+  text-align: center;
+}
+#footer #social-list {
+  list-style: none;
+  text-align: center;
+}
+#footer #social-list .social {
+  background: #eee;
+  border: 1px solid rgba(0,0,0,0.1);
+  -webkit-border-radius: 32px;
+  border-radius: 32px;
+  display: inline-block;
+  height: 64px;
+  margin: 20px 10px;
+  width: 64px;
+}
+#footer .credits {
+  display: block;
+  font-size: 0.9rem;
+  margin: 1em 0 2em;
+}
+#case-studies header,
 #work header {
   display: none;
 }
-#footer {
-  color: rgba(0,0,0,0.4);
-  padding: 0 0 2em;
-  text-align: center;
-}
-#footer .credits {
-  font-size: 0.9rem;
-}
-#work-list {
+.work-list {
   margin: 0 0 -20px -75px;
+  padding: 0 0 20px;
   position: relative;
   width: 960px;
+  zoom: 1;
 }
-#work-list .item {
+.work-list:before,
+.work-list:after {
+  content: "";
+  display: table;
+}
+.work-list:after {
+  clear: both;
+}
+.work-list.studies-list .work {
+  cursor: pointer;
+  height: 250px;
+  width: 460px;
+}
+.work-list .work {
   background: #eee;
   border: 1px solid rgba(0,0,0,0.1);
   cursor: zoom-in;
-  display: inline-block;
-  height: 225px;
+  display: block;
+  height: 226px;
+  float: left;
   margin: 0 20px 20px 0;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -134,7 +182,7 @@ hr {
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-#work-list .item.show {
+.work-list .work.show {
   opacity: 1;
   -ms-filter: none;
   filter: none;
@@ -144,10 +192,10 @@ hr {
   -ms-transform: scale(1);
   transform: scale(1);
 }
-#work-list .item.show:hover .thumb {
+.work-list .work.show:hover .thumb {
   -webkit-filter: blur(10px);
 }
-#work-list .item.show:hover .meta {
+.work-list .work.show:hover .meta {
   opacity: 1;
   -ms-filter: none;
   filter: none;
@@ -157,12 +205,12 @@ hr {
   -ms-transform: scale(1);
   transform: scale(1);
 }
-#work-list .item .thumb {
+.work-list .work .thumb {
   max-width: 100%;
   width: 100%;
 }
-#work-list .item .meta {
-  background: rgba(255,255,255,0.88);
+.work-list .work .meta {
+  background: rgba(255,255,255,0.8);
   bottom: 0;
   left: 0;
   opacity: 0;

@@ -33,10 +33,10 @@ DMLR.dribbbleShots.prototype = {
 		});
 	},
 	renderShots: function(data,limit) {
-		var limit = limit || 12;
+		var limit = limit || 9;
 		limit = (limit > data.length) ? data.length : limit;
 		for(i=0;i < limit;i++) {
-			var html = '<li class="item">'+
+			var html = '<li class="work">'+
 			           '<img src="'+data[i].image_url+'" class="thumb">'+
 			           '<span class="meta" data-full="'+data[i].image_url+'">'+
 			           '<h2>'+data[i].title+'</h2>'+
@@ -44,9 +44,9 @@ DMLR.dribbbleShots.prototype = {
 			           '</span>'+
 			           '</li>';
 			
-			var item = $(html).appendTo('#work-list');
+			var item = $(html).appendTo('.other-list');
 		}
-		$('#work-list .item').each(function(i) {
+		$('.other-list .work').each(function(i) {
 			var that = this;
 			setTimeout(function() {
 				$(that).addClass('show');
