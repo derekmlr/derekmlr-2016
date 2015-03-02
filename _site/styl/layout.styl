@@ -29,6 +29,28 @@ hr
 #header
 	padding:100px 0 64px
 	text-align:center
+	.skills-list
+		list-style:none
+		text-align:center
+		.skill
+			color:$textAltColor
+			display:inline-block
+			font-size:0.8rem
+			margin:0 10px
+			padding-left:24px
+			position:relative
+			text-transform:uppercase
+			// Temporary icon placeholder
+			&:before
+				content:''
+				display:block
+				border:1px solid $textAltColor
+				border-radius:16px
+				height:16px
+				left:0
+				position:absolute
+				width:16px
+				top:2px
 	
 #logo
 	image '/img/logo.png'
@@ -43,11 +65,12 @@ hr
 		display:none
 		
 #footer
+	color:$textAltColor
 	text-align:center
 
 // Portfolio work list
 #work-list
-	margin-left:-35px
+	margin:0 0 -20px -35px
 	position:relative
 	width:880px
 	.item
@@ -60,13 +83,11 @@ hr
 		opacity:0
 		overflow:hidden
 		position:relative
-		top:20px
 		width:200px
-		transform:scale(0.9)
+		transform:scale(0.8)
 		transition:all 0.2s ease-in-out
 		&.show
 			opacity:1
-			top:0
 			transform:scale(1)
 			&:hover
 				.thumb
