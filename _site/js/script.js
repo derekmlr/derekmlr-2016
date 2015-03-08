@@ -29,7 +29,7 @@ DMLR.parallaxScroll.prototype = {
 DMLR.backgroundVideo = function() {
 	this.video = document.getElementById("background-video");
 	this.video_container = $('#video-container');
-	this.timer = 5000;
+	this.timer = 10000;
 	this.init();
 }
 
@@ -37,9 +37,7 @@ DMLR.backgroundVideo.prototype = {
 	init : function() {
 		var that = this;
 
-		this.resetVideo();
 		this.showVideo();
-		this.playVideo();
 		this.video.onended = function() {
 			that.hideVideo();
 			that.videoInterval();
@@ -49,9 +47,7 @@ DMLR.backgroundVideo.prototype = {
 	videoInterval : function() {
 		var that = this;
 		setTimeout(function() {
-			that.resetVideo();
 			that.showVideo();
-			that.playVideo();
 			that.video.onended = function() {
 				that.hideVideo();
 				that.videoInterval();
@@ -60,7 +56,9 @@ DMLR.backgroundVideo.prototype = {
 	},
 
 	showVideo : function() {
+		this.resetVideo();
 		this.video_container.addClass('show');
+		this.playVideo();
 	},
 
 	hideVideo : function() {
@@ -156,7 +154,6 @@ DMLR.dribbbleShots.prototype = {
  * Temporary calls during testing
  * =================
  */
-
 setTimeout(function() {
 	var bg_video = new DMLR.backgroundVideo();
 },1000);
