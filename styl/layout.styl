@@ -12,7 +12,7 @@ a
 body
 	background:$bg
 	color:$textColor
-	font:16px/1.6em "Open Sans",helvetica,arial
+	font:16px/2em "Open Sans",helvetica,arial
 	-webkit-font-smoothing: antialiased
 
 hr
@@ -38,8 +38,10 @@ hr
 	position:relative
 	
 #header
-	padding:120px 0 80px
+	padding:100px 0 80px
 	text-align:center
+	p
+		line-height:1.7em
 	.skills-list
 		list-style:none
 		margin-top:2em
@@ -132,7 +134,7 @@ hr
 			&:hover
 				.thumb
 					//-webkit-filter:blur(10px)
-					transform:scale(3)
+					transform:scale(2)
 				.meta
 					opacity:1
 					transform:scale(1)
@@ -145,6 +147,8 @@ hr
 			background:rgba(255,255,255,0.9)
 			bottom:0
 			left:0
+			font-size:0.8rem
+			line-height:1.7em
 			opacity:0
 			padding:20px
 			position:absolute
