@@ -1,6 +1,89 @@
 var DMLR = DMLR || {};
 
-// Retrieve Dribbble shots for work area
+
+/**
+ * Parallax
+ * =================
+ */
+DMLR.parallaxScroll = function() {
+	this.bg = $("#background");
+	this.contents = $("#logo");
+}
+
+DMLR.parallaxScroll.prototype = {
+	init : function() {
+		// something
+	},
+
+	scroll : function() {
+		// something
+	}
+}
+
+
+
+/**
+ * Video background
+ * =================
+ */
+DMLR.backgroundVideo = function() {
+	this.video = document.getElementById("background-video");
+	this.video_container = $('#video-container');
+	this.timer = 5000;
+	this.init();
+}
+
+DMLR.backgroundVideo.prototype = {
+	init : function() {
+		var that = this;
+
+		this.resetVideo();
+		this.showVideo();
+		this.playVideo();
+		this.video.onended = function() {
+			that.hideVideo();
+			that.videoInterval();
+		}
+	},
+
+	videoInterval : function() {
+		var that = this;
+		setTimeout(function() {
+			that.resetVideo();
+			that.showVideo();
+			that.playVideo();
+			that.video.onended = function() {
+				that.hideVideo();
+				that.videoInterval();
+			}
+		}, this.timer);
+	},
+
+	showVideo : function() {
+		this.video_container.addClass('show');
+	},
+
+	hideVideo : function() {
+		this.video_container.removeClass('show');
+	},
+
+	playVideo : function() {
+		var that = this;
+		that.video.play();
+	},
+
+	resetVideo : function() {
+		this.video.pause();
+		this.video.currentTime = 0;
+		this.video.load();
+	},
+}
+
+
+/**
+ * Retrieve Dribbble shots for work area
+ * =================
+ */
 DMLR.dribbbleShots = function() {
 	this.url = 'http://api.dribbble.com/derekmlr/shots';
 	this.init();
@@ -33,14 +116,14 @@ DMLR.dribbbleShots.prototype = {
 		});
 	},
 	renderShots: function(data,limit) {
-		var limit = limit || 9;
+		var limit = limit || 12;
 		limit = (limit > data.length) ? data.length : limit;
 		for(i=0;i < limit;i++) {
 			var html = '<li class="work">'+
 			           '<img src="'+data[i].image_url+'" class="thumb">'+
 			           '<span class="meta" data-full="'+data[i].image_url+'">'+
 			           '<h2>'+data[i].title+'</h2>'+
-			           //jQuery(data[i].description).text()+
+			           jQuery(data[i].description).text()+
 			           '</span>'+
 			           '</li>';
 			
@@ -69,4 +152,12 @@ DMLR.dribbbleShots.prototype = {
 	}
 }
 
+/**
+ * Temporary calls during testing
+ * =================
+ */
+
+setTimeout(function() {
+	var bg_video = new DMLR.backgroundVideo();
+},1000);
 var shots = new DMLR.dribbbleShots();

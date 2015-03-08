@@ -1,0 +1,36 @@
+#background
+	background:$bg
+	image '/img/wolf-bg.png'
+	background-size:100% auto
+	background-repeat:no-repeat
+	height:auto
+	opacity:0.1
+	left:0
+	position:absolute
+	right:0
+	top:0
+	z-index:0
+	&:after
+		background:linear-gradient(bottom,$bg 0%, rgba($bg,0) 100%)
+		bottom:0
+		content:''
+		display:block
+		height:200px
+		position:absolute
+		left:0
+		right:0
+
+#background-video
+	//opacity:0.06
+	width:100%
+	
+#video-container
+	opacity:0
+	transition-property:opacity,visibility
+	transition-duration:0.2s
+	transition-timing-function:linear
+	visibility:hidden
+	width:100%
+	&.show
+		opacity:1
+		visibility:visible
