@@ -8,6 +8,8 @@ var DMLR = DMLR || {};
 DMLR.parallaxScroll = function() {
 	this.bg = $("#background");
 	this.contents = $("#logo");
+
+	this.init();
 }
 
 DMLR.parallaxScroll.prototype = {
@@ -27,9 +29,11 @@ DMLR.parallaxScroll.prototype = {
  * =================
  */
 DMLR.backgroundVideo = function() {
+	this.bg = $('#background');
 	this.video = document.getElementById("background-video");
 	this.video_container = $('#video-container');
 	this.timer = 10000;
+	
 	this.init();
 }
 
@@ -47,6 +51,7 @@ DMLR.backgroundVideo.prototype = {
 	videoInterval : function() {
 		var that = this;
 		setTimeout(function() {
+			that.timer = that.changeTimer(); // Randomize intervals
 			that.showVideo();
 			that.video.onended = function() {
 				that.hideVideo();
@@ -57,12 +62,14 @@ DMLR.backgroundVideo.prototype = {
 
 	showVideo : function() {
 		this.resetVideo();
+		this.bg.addClass('show');
 		this.video_container.addClass('show');
 		this.playVideo();
 	},
 
 	hideVideo : function() {
 		this.video_container.removeClass('show');
+		this.bg.removeClass('show');
 	},
 
 	playVideo : function() {
@@ -75,6 +82,10 @@ DMLR.backgroundVideo.prototype = {
 		this.video.currentTime = 0;
 		this.video.load();
 	},
+
+	changeTimer : function() {
+		return Math.floor(Math.random()*(20000-10000+1)+10000);
+	}
 }
 
 
@@ -114,11 +125,11 @@ DMLR.dribbbleShots.prototype = {
 		});
 	},
 	renderShots: function(data,limit) {
-		var limit = limit || 12;
+		var limit = limit || 9;
 		limit = (limit > data.length) ? data.length : limit;
 		for(i=0;i < limit;i++) {
 			var html = '<li class="work">'+
-			           '<img src="'+data[i].image_url+'" class="thumb">'+
+			           //'<img src="'+data[i].image_url+'" class="thumb">'+
 			           '<span class="meta" data-full="'+data[i].image_url+'">'+
 			           '<h2>'+data[i].title+'</h2>'+
 			           jQuery(data[i].description).text()+
@@ -156,5 +167,5 @@ DMLR.dribbbleShots.prototype = {
  */
 setTimeout(function() {
 	var bg_video = new DMLR.backgroundVideo();
-},1000);
+},2000);
 var shots = new DMLR.dribbbleShots();

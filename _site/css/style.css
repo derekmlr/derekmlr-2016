@@ -30,14 +30,31 @@ p {
   background-size: 100% auto;
   background-repeat: no-repeat;
   height: auto;
-  opacity: 0.1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
-  filter: alpha(opacity=10);
+  opacity: 0.08;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=8)";
+  filter: alpha(opacity=8);
   left: 0;
   position: absolute;
   right: 0;
   top: 0;
   z-index: 0;
+  filter: blur(6px);
+  -webkit-filter: blur(8px);
+  -webkit-transition-property: opacity, filter, -webkit-filter;
+  -moz-transition-property: opacity, filter, -webkit-filter;
+  -o-transition-property: opacity, filter, -webkit-filter;
+  -ms-transition-property: opacity, filter, -webkit-filter;
+  transition-property: opacity, filter, -webkit-filter;
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  -ms-transition-duration: 1s;
+  transition-duration: 1s;
+  -webkit-transition-timing-function: linear;
+  -moz-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  -ms-transition-timing-function: linear;
+  transition-timing-function: linear;
 }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5/1), (min-device-pixel-ratio: 1.5), (min-resolution: 138dpi), (min-resolution: 1.5dppx) {
   #background {
@@ -60,6 +77,13 @@ p {
   position: absolute;
   left: 0;
   right: 0;
+}
+#background.show {
+  opacity: 0.1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+  filter: alpha(opacity=10);
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
 }
 #background-video {
   width: 100%;
@@ -107,7 +131,6 @@ a:hover {
   text-decoration: underline;
 }
 body {
-  background: #fff;
   color: #515152;
   font: 16px/2em "Open Sans", helvetica, arial;
   -webkit-font-smoothing: antialiased;
@@ -143,7 +166,7 @@ hr {
 }
 #header .skills-list {
   list-style: none;
-  margin-top: 2em;
+  margin-top: -0.5em;
   text-align: center;
 }
 #header .skills-list .skill {
@@ -164,12 +187,16 @@ hr {
   display: block;
   height: 16px;
   left: 0;
+  margin: -8px 0 0;
   position: absolute;
+  top: 50%;
   width: 16px;
-  top: 4px;
 }
 #logo {
   background-image: url("/img/logo.png");
+  -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  background-size: 100% auto;
   display: inline-block;
   height: 80px;
   margin: 0 0 25px;
@@ -212,10 +239,10 @@ hr {
   display: none;
 }
 .work-list {
-  margin: 0 0 -20px -75px;
+  margin: 0 0 -20px -92px;
   padding: 0 0 20px;
   position: relative;
-  width: 960px;
+  width: 975px;
   zoom: 1;
 }
 .work-list:before,
@@ -239,7 +266,7 @@ hr {
   height: 226px;
   float: left;
   font-size: 14px;
-  margin: 0 20px 20px 0;
+  margin: 0 25px 25px 0;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);

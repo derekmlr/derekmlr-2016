@@ -10,7 +10,6 @@ a
 		text-decoration:underline
 	
 body
-	background:$bg
 	color:$textColor
 	font:16px/2em "Open Sans",helvetica,arial
 	-webkit-font-smoothing: antialiased
@@ -44,7 +43,7 @@ hr
 		line-height:1.7em
 	.skills-list
 		list-style:none
-		margin-top:2em
+		margin-top:-0.5em
 		text-align:center
 		.skill
 			color:$textAltColor
@@ -63,12 +62,14 @@ hr
 				display:block
 				height:16px
 				left:0
+				margin:-8px 0 0
 				position:absolute
+				top:50%
 				width:16px
-				top:4px
 	
 #logo
 	image '/img/logo.png'
+	background-size:100% auto
 	display:inline-block
 	height:80px
 	margin:0 0 25px
@@ -103,10 +104,10 @@ hr
 
 // Portfolio work list
 .work-list
-	margin:0 0 -20px -75px
+	margin:0 0 -20px -92px
 	padding:0 0 20px
 	position:relative
-	width:960px
+	width:975px
 	clearfix()
 	&.studies-list
 		.work
@@ -121,7 +122,7 @@ hr
 		height:226px
 		float:left
 		font-size:14px
-		margin:0 20px 20px 0
+		margin:0 25px 25px 0
 		opacity:0
 		overflow:hidden
 		position:relative
