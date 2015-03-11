@@ -4,12 +4,17 @@
 	background-size:100% auto
 	background-repeat:no-repeat
 	height:auto
-	opacity:0.1
+	opacity:0.08
 	left:0
 	position:absolute
 	right:0
 	top:0
 	z-index:0
+	filter:blur(6px)
+	-webkit-filter:blur(3px)
+	transition-property:opacity,filter,-webkit-filter
+	transition-duration:1.5s
+	transition-timing-function:linear
 	&:after
 		background:linear-gradient(bottom,$bg 0%, rgba($bg,0) 100%)
 		bottom:0
@@ -19,6 +24,10 @@
 		position:absolute
 		left:0
 		right:0
+	&.show
+		opacity:0.1
+		filter:blur(0px)
+		-webkit-filter:blur(0px)
 
 #background-video
 	width:100%
@@ -26,7 +35,7 @@
 #video-container
 	opacity:0
 	transition-property:opacity,visibility
-	transition-duration:1s
+	transition-duration:1.5s
 	transition-timing-function:linear
 	visibility:hidden
 	width:100%
