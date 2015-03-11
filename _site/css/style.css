@@ -45,11 +45,11 @@ p {
   -o-transition-property: opacity, filter, -webkit-filter;
   -ms-transition-property: opacity, filter, -webkit-filter;
   transition-property: opacity, filter, -webkit-filter;
-  -webkit-transition-duration: 1.5s;
-  -moz-transition-duration: 1.5s;
-  -o-transition-duration: 1.5s;
-  -ms-transition-duration: 1.5s;
-  transition-duration: 1.5s;
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  -ms-transition-duration: 1s;
+  transition-duration: 1s;
   -webkit-transition-timing-function: linear;
   -moz-transition-timing-function: linear;
   -o-transition-timing-function: linear;
