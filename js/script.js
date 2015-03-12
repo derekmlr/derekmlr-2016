@@ -42,10 +42,10 @@ DMLR.backgroundVideo.prototype = {
 		var that = this;
 
 		this.showVideo();
-		this.video.onended = function() {
+		setTimeout(function() {
 			that.hideVideo();
 			that.videoInterval();
-		}
+		},10000);
 	},
 
 	videoInterval : function() {
@@ -53,10 +53,10 @@ DMLR.backgroundVideo.prototype = {
 		setTimeout(function() {
 			that.timer = that.changeTimer(); // Randomize intervals
 			that.showVideo();
-			that.video.onended = function() {
+			setTimeout(function() {
 				that.hideVideo();
 				that.videoInterval();
-			}
+			},10000);
 		}, this.timer);
 	},
 
@@ -85,6 +85,79 @@ DMLR.backgroundVideo.prototype = {
 
 	changeTimer : function() {
 		return Math.floor(Math.random()*(20000-10000+1)+10000);
+	}
+}
+
+
+/**
+ * Overlay
+ * =================
+ */
+DMLR.overlay = function() {
+	this.$overlay = $('#overlay');
+	this.$content = $('#overlay-content');
+	this.$close = '#overlay-close';
+
+	this.trigger = '.overlay';
+
+	this.init();
+}
+
+DMLR.overlay.prototype = {
+	init : function() {
+		var that = this;
+
+		// Overlay is triggered
+		$('body').on('click', this.trigger, function(e) {
+			e.preventDefault();
+
+			var url = $(this).attr('href');
+			that.showOverlay();
+			// Next, show spinner...?
+			that.loadContent(url);
+		});
+
+		// Close requested
+		$('#overlay').on('click', '#logo, '+this.$close, function(e) {
+			e.preventDefault();
+			if (that.$overlay.hasClass('show')) {
+				that.hideOverlay();
+				that.hideContent();
+				setTimeout(function() {
+					that.$content.html('&nbsp;');
+				},1000);
+			}
+		});
+	},
+
+	showOverlay : function() {
+		$('body').addClass('overlay-open');
+		this.$overlay.addClass('show');
+	},
+
+	hideOverlay : function() {
+		$('body').removeClass('overlay-open');
+		this.$overlay.removeClass('show');
+	},
+
+	showContent : function() {
+		this.$content.addClass('show');
+	},
+
+	hideContent : function() {
+		this.$content.removeClass('show');
+	},
+
+	loadContent : function(url) {
+		var that = this;
+		var url = url + ' #article';
+		this.$content.load(url, function() {
+			that.showContent();
+		});
+	},
+
+	unloadContent : function() {
+		// Maybe remove content and bring back spinner?
 	}
 }
 
@@ -129,11 +202,13 @@ DMLR.dribbbleShots.prototype = {
 		limit = (limit > data.length) ? data.length : limit;
 		for(i=0;i < limit;i++) {
 			var html = '<li class="work">'+
-			           //'<img src="'+data[i].image_url+'" class="thumb">'+
-			           '<span class="meta" data-full="'+data[i].image_url+'">'+
-			           '<h2>'+data[i].title+'</h2>'+
-			           jQuery(data[i].description).text()+
-			           '</span>'+
+			               '<a href="/wepay" class="overlay">'+
+			               '<img src="'+data[i].image_url+'" class="thumb">'+
+			               '<span class="meta" data-full="'+data[i].image_url+'">'+
+			                   '<h2>'+data[i].title+'</h2>'+
+			                   jQuery(data[i].description).text()+
+			               '</span>'+
+			               '</a>'+
 			           '</li>';
 			
 			var item = $(html).appendTo('.other-list');
@@ -169,3 +244,4 @@ setTimeout(function() {
 	var bg_video = new DMLR.backgroundVideo();
 },2000);
 var shots = new DMLR.dribbbleShots();
+var overlay = new DMLR.overlay();
