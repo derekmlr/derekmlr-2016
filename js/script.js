@@ -45,7 +45,7 @@ DMLR.backgroundVideo.prototype = {
 		setTimeout(function() {
 			that.hideVideo();
 			that.videoInterval();
-		},9500);
+		},10000);
 	},
 
 	videoInterval : function() {
@@ -56,7 +56,7 @@ DMLR.backgroundVideo.prototype = {
 			setTimeout(function() {
 				that.hideVideo();
 				that.videoInterval();
-			},9500);
+			},10000);
 		}, this.timer);
 	},
 
