@@ -116,18 +116,18 @@ p {
   filter: none;
   visibility: visible;
 }
+body.overlay-open {
+  overflow: hidden;
+}
 body.overlay-open #video-container {
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  visibility: hidden;
+  display: none;
 }
 .overlay {
   display: block;
 }
 #overlay {
   background: #fff;
-  background: rgba(255,255,255,0.94);
+  background: rgba(255,255,255,0.96);
   bottom: 0;
   left: 0;
   opacity: 0;
@@ -204,6 +204,11 @@ body.overlay-open #video-container {
   right: 40px;
   text-decoration: none !important;
   top: 0px;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -212,6 +217,18 @@ body.overlay-open #video-container {
 }
 #overlay-close:hover {
   color: #515152;
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+#overlay-close:active {
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
 }
 * {
   -webkit-box-sizing: border-box;
