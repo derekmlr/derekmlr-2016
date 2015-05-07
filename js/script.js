@@ -161,87 +161,16 @@ DMLR.overlay.prototype = {
 	}
 }
 
-
-/**
- * Retrieve Dribbble shots for work area
- * =================
- */
-DMLR.dribbbleShots = function() {
-	this.url = 'http://api.dribbble.com/derekmlr/shots';
-	this.init();
-}
-
-DMLR.dribbbleShots.prototype = {
-	init : function() {
-		var that = this;
-		this.getShots(1,function(){
-			setTimeout(function() {
-				that.renderShots(that.shots);
-			},100);
-		});
-	},
-	getShots : function(page,callback) {
-		var that = this;
-		if (typeof page != 'undefined') {
-			that.url += '?page='+page;
-		}
-		$.ajax({
-			url:that.url,
-			type:'GET',
-			dataType:'jsonp',
-			crossDomain:true,
-
-			success: function(data) {
-				that.shots = data.shots;
-				callback();
-			}
-		});
-	},
-	renderShots: function(data,limit) {
-		var limit = limit || 9;
-		limit = (limit > data.length) ? data.length : limit;
-		for(i=0;i < limit;i++) {
-			var html = '<li class="work">'+
-			               '<a href="/wepay" class="overlay">'+
-			               '<img src="'+data[i].image_url+'" class="thumb">'+
-			               '<span class="meta" data-full="'+data[i].image_url+'">'+
-			                   '<h2>'+data[i].title+'</h2>'+
-			                   jQuery(data[i].description).text()+
-			               '</span>'+
-			               '</a>'+
-			           '</li>';
-			
-			var item = $(html).appendTo('.other-list');
-		}
-		$('.other-list .work').each(function(i) {
-			var that = this;
-			setTimeout(function() {
-				$(that).addClass('show');
-			},i*100);
-
-			$(this).find('.meta')
-				.on('mousemove', function(e){
-					var that = this;
-					var xPos = ((e.pageX+620) > $(window).width()) ? (e.pageX-620) : e.pageX+20;
-					var yPos = ((e.pageY+450) > $(window).height()) ? (e.pageY-470) : e.pageY+20;
-					$('#work-preview').addClass('show').css({
-					   left:  xPos,
-					   top:   yPos,
-					   'background-image': 'url('+$(that).attr('data-full')+')'
-					});
-				}).on('mouseout', function(){
-					$('#work-preview').removeClass('show');
-				});
-		})
-	}
-}
-
 /**
  * Temporary calls during testing
  * =================
  */
-setTimeout(function() {
-	var bg_video = new DMLR.backgroundVideo();
-},2000);
-var shots = new DMLR.dribbbleShots();
-var overlay = new DMLR.overlay();
+$(document).ready(function() {
+	var bg_video;
+	var overlay;
+	setTimeout(function() {
+		$('body').addClass('loaded');
+		bg_video = new DMLR.backgroundVideo();
+		overlay = new DMLR.overlay();
+	},2000);
+});
