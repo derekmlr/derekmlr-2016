@@ -375,6 +375,7 @@ body.loaded #page-loader {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
+  visibility: hidden;
 }
 body.loaded #page-loader .spinner {
   opacity: 0;
@@ -412,6 +413,7 @@ hr {
   -o-transition: all 0.4s ease-in-out;
   -ms-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
+  visibility: visible;
   z-index: 9999;
 }
 #page-loader:before {
