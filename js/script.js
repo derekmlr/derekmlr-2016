@@ -168,9 +168,15 @@ DMLR.overlay.prototype = {
 $(document).ready(function() {
 	var bg_video;
 	var overlay;
+	
+	overlay = new DMLR.overlay();
+	
+	// Background load
+	setTimeout(function() {
+		bg_video = new DMLR.backgroundVideo();
+	},6000);
+	
 	setTimeout(function() {
 		$('body').addClass('loaded');
-		bg_video = new DMLR.backgroundVideo();
-		overlay = new DMLR.overlay();
 	},2000);
 });
