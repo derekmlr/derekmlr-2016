@@ -31,9 +31,6 @@ body
 				opacity:1
 				//top:0
 				visibility:visible
-		#background
-			opacity:$bgOpacity
-			visibility:visible
 
 #header
 	#logo, h1, p, ul
@@ -48,14 +45,7 @@ body
 		transition-delay:0.8s
 	ul
 		transition-delay:1s
-
-#background
-	opacity:0
-	transition-property:opacity,visibility,transform
-	transition-duration:0.8s 
-	transition-timing-function:ease-in-out
-	visibility:hidden
-	transition-delay:1.5s
+	
 
 hr
 	border:none
@@ -159,13 +149,13 @@ hr
 		
 #footer
 	color:$textAltColor
-	height:25%
+	height:30%
 	position:relative
 	text-align:center
 	&:before
 		content:''
 		display:inline-block
-		height:100%
+		height:90%
 		vertical-align:middle
 		width:0
 	.inner

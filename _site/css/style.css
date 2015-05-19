@@ -401,12 +401,6 @@ body.loaded #header ul {
   filter: none;
   visibility: visible;
 }
-body.loaded #background {
-  opacity: 0.08;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=8)";
-  filter: alpha(opacity=8);
-  visibility: visible;
-}
 #header #logo,
 #header h1,
 #header p,
@@ -447,32 +441,6 @@ body.loaded #background {
   -o-transition-delay: 1s;
   -ms-transition-delay: 1s;
   transition-delay: 1s;
-}
-#background {
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  -webkit-transition-property: opacity, visibility, -webkit-transform;
-  -moz-transition-property: opacity, visibility, -moz-transform;
-  -o-transition-property: opacity, visibility, -o-transform;
-  -ms-transition-property: opacity, visibility, -ms-transform;
-  transition-property: opacity, visibility, transform;
-  -webkit-transition-duration: 0.8s;
-  -moz-transition-duration: 0.8s;
-  -o-transition-duration: 0.8s;
-  -ms-transition-duration: 0.8s;
-  transition-duration: 0.8s;
-  -webkit-transition-timing-function: ease-in-out;
-  -moz-transition-timing-function: ease-in-out;
-  -o-transition-timing-function: ease-in-out;
-  -ms-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  visibility: hidden;
-  -webkit-transition-delay: 1.5s;
-  -moz-transition-delay: 1.5s;
-  -o-transition-delay: 1.5s;
-  -ms-transition-delay: 1.5s;
-  transition-delay: 1.5s;
 }
 hr {
   border: none;
@@ -608,14 +576,14 @@ hr {
 }
 #footer {
   color: rgba(0,0,0,0.4);
-  height: 25%;
+  height: 30%;
   position: relative;
   text-align: center;
 }
 #footer:before {
   content: '';
   display: inline-block;
-  height: 100%;
+  height: 90%;
   vertical-align: middle;
   width: 0;
 }
