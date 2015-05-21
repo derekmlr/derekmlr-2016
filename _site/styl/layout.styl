@@ -18,6 +18,8 @@ body
 	color:$textColor
 	font:16px/2em "Open Sans",helvetica,arial
 	-webkit-font-smoothing: antialiased
+	min-height:700px
+	padding-top:80vh;
 	&.loaded
 		#page-loader
 			opacity:0
@@ -33,6 +35,8 @@ body
 				visibility:visible
 
 #header
+	.inner
+		transform:translate3d(0,0,0)
 	#logo, h1, p, ul
 		opacity:0
 		position:relative
@@ -93,12 +97,15 @@ hr
 	position:relative
 	
 #header
-	height:80%
+	height:80vh
 	max-height:800px
 	min-height:500px
 	padding:0
-	position:relative
+	position:fixed
 	text-align:center
+	top:0
+	left:0
+	right:0
 	&:before
 		content:''
 		display:inline-block
@@ -149,7 +156,7 @@ hr
 		
 #footer
 	color:$textAltColor
-	height:30%
+	height:30vh
 	position:relative
 	text-align:center
 	&:before
@@ -167,7 +174,7 @@ hr
 		max-width:420px
 		text-align:center
 		.social
-			background:rgba(0,0,0,0.08)
+			background:rgba(3,3,3,0.2)
 			border-radius:32px
 			display:inline-block
 			height:64px
@@ -195,7 +202,7 @@ hr
 	position:relative
 	clearfix()
 	.work
-		background:rgba(0,0,0,0.08)
+		background:rgba(3,3,3,0.2)
 		display:block
 		float:left
 		font-size:14px

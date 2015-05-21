@@ -6,7 +6,7 @@
 	height:auto
 	opacity:$bgOpacity
 	left:0
-	position:absolute
+	position:fixed
 	right:0
 	top:0
 	z-index:0
@@ -15,6 +15,7 @@
 	transition-property:opacity,filter,-webkit-filter
 	transition-duration:1s
 	transition-timing-function:linear
+	transform:translate3d(0,0,0)
 	&:after
 		background:linear-gradient(bottom,$bg 0%, rgba($bg,0) 100%)
 		bottom:0

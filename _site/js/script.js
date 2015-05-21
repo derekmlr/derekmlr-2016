@@ -7,18 +7,33 @@ var DMLR = DMLR || {};
  */
 DMLR.parallaxScroll = function() {
 	this.bg = $("#background");
-	this.contents = $("#logo");
+	this.contents = $("#header");
 
 	this.init();
 }
 
 DMLR.parallaxScroll.prototype = {
 	init : function() {
-		// something
+		var that = this;
+		$(window).scroll(function() {
+			that.parallax();
+		});
 	},
 
-	scroll : function() {
-		// something
+	parallax : function() {
+		var that = this;
+		var amount = $(window).scrollTop();
+
+		this.bg.css('top',that.scrollPos(amount, 1.6,'up'));
+		this.contents.css('margin-top',that.scrollPos(amount, 2,'up'));
+		this.contents.css('opacity',(100-amount/6)/100);
+	},
+
+	scrollPos : function(scroll, speed, direction) {
+		var direction = (direction == 'up') ? -1 : 1;
+		var result = (scroll / speed * direction);
+		
+		return result;
 	}
 }
 
@@ -168,6 +183,7 @@ DMLR.overlay.prototype = {
 $(document).ready(function() {
 	var bg_video;
 	var overlay;
+	var parallaxScroll;
 	
 	overlay = new DMLR.overlay();
 	
@@ -178,5 +194,6 @@ $(document).ready(function() {
 	
 	setTimeout(function() {
 		$('body').addClass('loaded');
+		parallaxScroll = new DMLR.parallaxScroll();
 	},2000);
 });
