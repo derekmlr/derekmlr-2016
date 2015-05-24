@@ -452,25 +452,25 @@ body.loaded #work {
   transition-delay: 0.4s;
 }
 #header h1 {
-  -webkit-transition-delay: 0.8s;
-  -moz-transition-delay: 0.8s;
-  -o-transition-delay: 0.8s;
-  -ms-transition-delay: 0.8s;
-  transition-delay: 0.8s;
-}
-#header p {
   -webkit-transition-delay: 1s;
   -moz-transition-delay: 1s;
   -o-transition-delay: 1s;
   -ms-transition-delay: 1s;
   transition-delay: 1s;
 }
-#header ul {
+#header p {
   -webkit-transition-delay: 1.2s;
   -moz-transition-delay: 1.2s;
   -o-transition-delay: 1.2s;
   -ms-transition-delay: 1.2s;
   transition-delay: 1.2s;
+}
+#header ul {
+  -webkit-transition-delay: 1.5s;
+  -moz-transition-delay: 1.5s;
+  -o-transition-delay: 1.5s;
+  -ms-transition-delay: 1.5s;
+  transition-delay: 1.5s;
 }
 #work {
   opacity: 0;
