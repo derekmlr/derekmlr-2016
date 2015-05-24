@@ -18,8 +18,6 @@ body
 	color:$textColor
 	font:16px/2em "Open Sans",helvetica,arial
 	-webkit-font-smoothing: antialiased
-	min-height:700px
-	padding-top:80vh;
 	&.loaded
 		#page-loader
 			opacity:0
@@ -31,8 +29,11 @@ body
 			#logo, h1, p, ul
 				transform:translate3d(0,0,0)
 				opacity:1
-				//top:0
 				visibility:visible
+		#work
+			opacity:1
+			transform:translate3d(0,0,0)
+			visibility:visible
 
 #header
 	.inner
@@ -43,12 +44,20 @@ body
 		transform:translate3d(0,-20px,0)
 		transition:all 0.8s ease-in-out
 		visibility:hidden
-	h1
+	#logo
 		transition-delay:0.4s
-	p
+	h1
 		transition-delay:0.8s
-	ul
+	p
 		transition-delay:1s
+	ul
+		transition-delay:1.2s
+#work
+	opacity:0
+	transform:translate3d(0,20vh,0)
+	transition:all 0.5s ease-in-out
+	transition-delay:2s
+	visibility:hidden
 	
 
 hr
@@ -97,9 +106,6 @@ hr
 	position:relative
 	
 #header
-	height:80vh
-	max-height:800px
-	min-height:500px
 	padding:0
 	position:fixed
 	text-align:center
@@ -145,6 +151,12 @@ hr
 				top:50%
 				width:16px
 	
+#header
+.header-spacing
+	height:80vh
+	max-height:900px
+	min-height:500px
+	
 #logo
 	image '/img/logo.png' 100% auto
 	background-size:100% auto
@@ -189,8 +201,6 @@ hr
 		position:absolute
 		width:100%
 		
-
-#case-studies,
 #work
 	header
 		display:none

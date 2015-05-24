@@ -6,8 +6,9 @@ var DMLR = DMLR || {};
  * =================
  */
 DMLR.parallaxScroll = function() {
-	this.bg = $("#background");
-	this.contents = $("#header");
+	this.bg = $('#background');
+	this.header = $('#header');
+	this.contents = $('#content');
 
 	this.init();
 }
@@ -15,18 +16,27 @@ DMLR.parallaxScroll = function() {
 DMLR.parallaxScroll.prototype = {
 	init : function() {
 		var that = this;
+
+		// Scrolling trigger
 		$(window).scroll(function() {
-			that.parallax();
+			that.doParallax();
+		});
+
+		// Resize trigger
+		$(window).resize(function() {
+			that.doParallax();
+		});
+
+		// Resize trigger
+		$(window).load(function() {
+			that.doParallax();
 		});
 	},
 
-	parallax : function() {
-		var that = this;
-		var amount = $(window).scrollTop();
-
-		this.bg.css('top',that.scrollPos(amount, 1.6,'up'));
-		this.contents.css('margin-top',that.scrollPos(amount, 2,'up'));
-		this.contents.css('opacity',(100-amount/6)/100);
+	doParallax : function() {
+		if (this.contents.offset().top > $(window).scrollTop()) {
+			this.updateValues();
+		}
 	},
 
 	scrollPos : function(scroll, speed, direction) {
@@ -34,6 +44,15 @@ DMLR.parallaxScroll.prototype = {
 		var result = (scroll / speed * direction);
 		
 		return result;
+	},
+
+	updateValues : function() {
+		var that = this;
+		var amount = $(window).scrollTop();
+
+		this.bg.css('top',that.scrollPos(amount, 1.6,'up'));
+		this.header.css('margin-top',that.scrollPos(amount, 2,'up'));
+		this.header.css('opacity',(100-amount/6)/100);
 	}
 }
 
