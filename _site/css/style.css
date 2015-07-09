@@ -548,43 +548,6 @@ body {
   position: absolute;
   width: 100%;
 }
-#work header {
-  display: none;
-}
-.work-list {
-  margin: 0 0 0 2%;
-  padding: 0;
-  position: relative;
-  zoom: 1;
-}
-.work-list:before,
-.work-list:after {
-  content: "";
-  display: table;
-}
-.work-list:after {
-  clear: both;
-}
-.work-list .work {
-  background: rgba(3,3,3,0.2);
-  display: block;
-  float: left;
-  font-size: 14px;
-  margin: 0 2% 2% 0;
-  opacity: 1;
-  -ms-filter: none;
-  filter: none;
-  overflow: hidden;
-  position: relative;
-  width: 31%;
-  text-align: center;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  height: 300px;
-}
 body.loaded #page-loader {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -701,6 +664,64 @@ body.loaded #work {
   -ms-transition-delay: 2s;
   transition-delay: 2s;
   visibility: hidden;
+}
+#work header {
+  display: none;
+}
+.work-list {
+  margin: 0 0 0 2%;
+  padding: 0;
+  position: relative;
+  zoom: 1;
+}
+.work-list:before,
+.work-list:after {
+  content: "";
+  display: table;
+}
+.work-list:after {
+  clear: both;
+}
+.work-list .work {
+  background: rgba(3,3,3,0.2) center;
+  -webkit-background-size: auto 100%;
+  -moz-background-size: auto 100%;
+  background-size: auto 100%;
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  display: block;
+  float: left;
+  font-size: 14px;
+  margin: 0 2% 2% 0;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  overflow: hidden;
+  position: relative;
+  width: 31%;
+  text-align: center;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  height: 300px;
+}
+.work-list .work:before {
+  border: 1px solid rgba(0,0,0,0.2);
+  bottom: 0;
+  content: '';
+  display: block;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+.work-list .work:hover {
+  -webkit-background-size: auto 120%;
+  -moz-background-size: auto 120%;
+  background-size: auto 120%;
 }
 #article-header {
   margin: 80px 0 100px;

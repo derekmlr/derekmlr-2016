@@ -60,7 +60,7 @@ DMLR.parallaxScroll.prototype = {
 		var amount = $(window).scrollTop();
 
 		this.bg.css('top',that.scrollPos(amount, 4,'down'));
-		this.header.css('margin-top',that.scrollPos(amount, 2,'down'));
+		this.header.css('margin-top',that.scrollPos(amount, 3,'down'));
 		this.header.css('opacity',(100-amount/6)/100);
 	}
 }
