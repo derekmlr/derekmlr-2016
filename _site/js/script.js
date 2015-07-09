@@ -6,7 +6,7 @@ var DMLR = DMLR || {};
  * =================
  */
 DMLR.parallaxScroll = function() {
-	this.bg = $('#background');
+	this.bg = $('#hero-background');
 	this.header = $('#header');
 	this.contents = $('#content');
 
@@ -28,18 +28,24 @@ DMLR.parallaxScroll.prototype = {
 		});
 
 		// Resize trigger
-		$(window).load(function() {
+		$(document).ready(function() {
 			that.doParallax();
 		});
 	},
 
 	doParallax : function() {
+		/*
+			Runs required functionality for parallax effect
+		*/
 		if (this.contents.offset().top > $(window).scrollTop()) {
 			this.updateValues();
 		}
 	},
 
 	scrollPos : function(scroll, speed, direction) {
+		/*
+			Find appropriate value based on direction
+		*/
 		var direction = (direction == 'up') ? -1 : 1;
 		var result = (scroll / speed * direction);
 		
@@ -47,11 +53,14 @@ DMLR.parallaxScroll.prototype = {
 	},
 
 	updateValues : function() {
+		/*
+			Updates CSS values of elements
+		*/
 		var that = this;
 		var amount = $(window).scrollTop();
 
-		this.bg.css('top',that.scrollPos(amount, 1.6,'up'));
-		this.header.css('margin-top',that.scrollPos(amount, 2,'up'));
+		this.bg.css('top',that.scrollPos(amount, 4,'down'));
+		this.header.css('margin-top',that.scrollPos(amount, 2,'down'));
 		this.header.css('opacity',(100-amount/6)/100);
 	}
 }
@@ -63,7 +72,7 @@ DMLR.parallaxScroll.prototype = {
  * =================
  */
 DMLR.backgroundVideo = function() {
-	this.bg = $('#background');
+	this.bg = $('#hero-background');
 	this.video = document.getElementById("background-video");
 	this.video_container = $('#video-container');
 	this.timer = 10000;
