@@ -46,9 +46,9 @@ body
 	position:relative
 	z-index:1
 
-#header
-#content
-#footer
+#header .inner
+#content .inner
+#footer .inner
 	margin:0 auto
 	max-width:1250px
 	width:100%
@@ -58,12 +58,8 @@ body
 	position:relative
 	
 #header
-	padding:0
-	position:absolute
+	min-height:200px
 	text-align:center
-	top:0
-	left:0
-	right:0
 	&:before
 		content:''
 		display:inline-block
@@ -72,7 +68,7 @@ body
 		width:0
 	.inner
 		display:inline-block
-		margin-top:0
+		margin-top:-20px
 		vertical-align:middle
 		width:600px
 	p
@@ -105,9 +101,9 @@ body
 	
 #header
 .header-spacing
-	height:80vh
+	height:60vh
 	max-height:900px
-	min-height:500px
+	min-height:420px
 	
 #logo
 	image '/img/logo.png' 100% auto
@@ -117,6 +113,10 @@ body
 	margin:0 0 25px
 	text-indent:-9999px
 	width:120px
+
+#content
+	.inner
+		max-width:none
 		
 #footer
 	color:$textAltColor
