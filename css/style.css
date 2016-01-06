@@ -120,6 +120,7 @@ body {
 @media screen and (max-width: 768px) {
   #header .inner h1 {
     font-size: 2.4em;
+    margin-bottom: 1em;
   }
   #header .inner h1 strong {
     display: block;
@@ -139,12 +140,6 @@ body {
   height: 60vh;
   max-height: 900px;
   min-height: 420px;
-}
-@media screen and (max-width: 768px) {
-  #header,
-  .header-spacing {
-    height: 40vh;
-  }
 }
 #logo {
   background-image: url("/img/logo.png");
@@ -177,6 +172,7 @@ body {
 #footer {
   color: rgba(0,0,0,0.4);
   height: 30vh;
+  min-height: 200px;
   position: relative;
   text-align: center;
 }
