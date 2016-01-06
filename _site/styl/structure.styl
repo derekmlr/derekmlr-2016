@@ -51,7 +51,7 @@ body
 #footer .inner
 	margin:0 auto
 	max-width:1250px
-	width:100%
+	width:95%
 
 #logo
 #header
@@ -70,40 +70,26 @@ body
 		display:inline-block
 		margin-top:-20px
 		vertical-align:middle
-		width:600px
+		width:95%
+		@media $device-sm
+			h1
+				font-size:2.4em
+				strong
+					display:block
+			p
+				display:none
+	h1
+		line-height:1.2em
 	p
 		line-height:1.7em
-	.skills-list
-		list-style:none
-		margin-top:-0.5em
-		text-align:center
-		.skill
-			color:$textAltColor
-			display:inline-block
-			font-size:0.8rem
-			margin:0 10px
-			padding-left:25px
-			position:relative
-			text-transform:uppercase
-			// Temporary icon placeholder
-			&:before
-				background:$borderColor
-				border:1px solid $borderColor
-				border-radius:16px
-				content:''
-				display:block
-				height:16px
-				left:0
-				margin:-9px 0 0
-				position:absolute
-				top:50%
-				width:16px
 	
 #header
 .header-spacing
 	height:60vh
 	max-height:900px
 	min-height:420px
+	@media $device-sm
+		height:40vh
 	
 #logo
 	image '/img/logo.png' 100% auto
@@ -116,7 +102,10 @@ body
 
 #content
 	.inner
-		max-width:none
+		max-width:1600px
+		margin:0 auto
+		@media $device-sm
+			width:100%
 		
 #footer
 	color:$textAltColor
@@ -132,18 +121,6 @@ body
 	.inner
 		display:inline-block
 		vertical-align:middle
-	#social-list
-		list-style:none
-		margin:0 auto
-		max-width:420px
-		text-align:center
-		.social
-			background:rgba(3,3,3,0.2)
-			border-radius:32px
-			display:inline-block
-			height:64px
-			margin:0 10px
-			width:64px
 	.credits
 		bottom:0
 		display:block

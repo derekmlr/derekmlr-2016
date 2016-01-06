@@ -1,0 +1,107 @@
+/*!
+ * /components/social.styl
+ * 
+ * Styling for the contact and social links
+ *
+ */
+ 
+.social-list
+	list-style:none
+	margin:0 auto
+	text-align:center
+	.social
+		display:inline-block
+		height:64px
+		margin:0 5px
+		position:relative
+		text-align:center
+		width:64px
+		a
+			border:1px solid rgba(3,3,3,0.2)
+			border-radius:32px
+			color:rgba(3,3,3,0.2)
+			cursor:pointer
+			display:inline-block
+			height:64px
+			position:relative
+			transition:all 0.2s ease-in-out
+			width:64px
+			&:before
+				background:rgba(#313132,0.4)
+				border-radius:100%
+				bottom:50%
+				content:''
+				display:block
+				left:50%
+				position:absolute
+				right:50%
+				top:50%
+				transition:all 0.2s ease-in-out
+			&:hover
+				background:#313132
+				border-color:transparent
+				color:#fff
+				transform:scale(0.9)
+				&:before
+					bottom:-15%
+					left:-15%
+					right:-15%
+					top:-15%
+				.social-icon 
+					transform:scale(1.2)
+					path
+						fill: #fff
+			.social-icon
+				display:block
+				margin:-10px auto 0
+				position:relative
+				top:50%
+				width:24px
+				z-index:2
+				transition:all 0.2s ease-in-out
+				path
+					fill: rgba(3,3,3,0.2)
+					transition:all 0.2s ease-in-out
+		&.email
+			border-right:1px solid rgba(33,33,33,0.1)
+			text-align:left
+			width:(64 + 16)px
+			a
+				text-align:center
+		
+.social-list
+	.resume
+		a
+			&:hover
+				background:#EE5555
+				&:before
+					background:rgba(#EE5555,0.4)
+	.email
+		a
+			.social-icon
+				margin-top:-9px
+				width:28px
+	.twitter 
+		a
+			&:hover
+				background:#55acee
+				&:before
+					background:rgba(#55acee,0.4)
+	.linkedin
+		a
+			padding-left:2px
+			.social-icon
+				margin-top:-12px
+			&:hover
+				background:#0077B5
+				&:before
+					background:rgba(#0077B5,0.4)
+	.dribbble
+		a
+			.social-icon
+				margin-top:-16px
+				width:32px
+			&:hover
+				background:#EC4989
+				&:before
+					background:rgba(#EC4989,0.4)

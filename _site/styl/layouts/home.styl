@@ -51,8 +51,8 @@ body
 	clearfix()
 	.work
 		background:rgba(3,3,3,0.2) center
-		background-size:auto 100%
-		border:1px solid transparent
+		background-size:cover
+		border:1px solid rgba(0,0,0,0.1)
 		display:block
 		float:left
 		font-size:14px
@@ -63,7 +63,6 @@ body
 		width:33.33%
 		text-align:center
 		transition:all 0.2s ease-in-out
-		height:320px
 		&:before
 			bottom:0
 			content:''
@@ -73,5 +72,15 @@ body
 			right:0
 			top:0
 			z-index:1
+		&:after
+			content:''
+			display:block
+			padding-bottom:75%
 		&:hover
 			background-size:auto 120%
+			-webkit-filter:blur(10px)
+			filter:blur(10px)
+		@media $device-lrg
+			width:50%
+		@media $device-sm
+			width:100%

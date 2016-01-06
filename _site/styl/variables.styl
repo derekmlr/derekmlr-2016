@@ -10,5 +10,46 @@ $linkColor = hsl(203,80%,60%)
 $linkDecoration = none
 
 // Text
-$textColor = #515152
+$textColor = #414142
 $textAltColor = rgba(0,0,0,0.4)
+
+
+/**
+ * Responsive
+ */
+ 
+/*
+ * NOTE: Order must be largest to smallest 
+ * for proper scaling down overwrites!
+ * 
+ * Example use:
+ * 
+ * .selector-class
+ *     background:black
+ *     @media $device-xlrg
+ *         background:white
+ *     @media $device-lrg
+ *         background:red
+ *     @media $device-med
+ *         background:green
+ *     @media $device-sm
+ *         background:blue
+ *     @media $device-xsm
+ *         background:purple
+ * 
+ */
+
+// Extra Small devices (portrait phones and smaller)
+$device-xsm = 'screen and (max-width: 480px)'
+ 
+// Small devices (landscape phones, 480px and up)
+$device-sm = 'screen and (max-width: 768px)'
+
+// Medium devices (tablets, 768px and up)
+$device-med = 'screen and (max-width: 992px)'
+
+// Large devices (desktops, 992px and up)
+$device-lrg = 'screen and (max-width: 1200px)'
+
+// Extra Large devices (4k+, 1200px and up)
+$device-xlrg = 'screen and (min-width: 1200px)'
