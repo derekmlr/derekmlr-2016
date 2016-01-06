@@ -120,6 +120,7 @@ body {
 @media screen and (max-width: 768px) {
   #header .inner h1 {
     font-size: 2.4em;
+    margin-bottom: 2em;
   }
   #header .inner h1 strong {
     display: block;
@@ -177,6 +178,7 @@ body {
 #footer {
   color: rgba(0,0,0,0.4);
   height: 30vh;
+  min-height: 200px;
   position: relative;
   text-align: center;
 }
