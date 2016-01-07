@@ -161,7 +161,7 @@ body {
   }
 }
 #content .inner {
-  max-width: 2400px;
+  max-width: 2402px;
   margin: 0 auto;
 }
 @media screen and (max-width: 768px) {
@@ -734,6 +734,12 @@ body.loaded #work {
   padding: 0;
   position: relative;
   zoom: 1;
+}
+@media screen and (max-width: 768px) {
+  .work-list {
+    border-left: none;
+    border-right: none;
+  }
 }
 .work-list:before,
 .work-list:after {
