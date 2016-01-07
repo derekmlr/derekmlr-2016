@@ -94,7 +94,7 @@ body {
 #footer .inner {
   margin: 0 auto;
   max-width: 1250px;
-  width: 95%;
+  width: 98%;
 }
 #logo,
 #header {
@@ -161,7 +161,7 @@ body {
   }
 }
 #content .inner {
-  max-width: 1600px;
+  max-width: 2400px;
   margin: 0 auto;
 }
 @media screen and (max-width: 768px) {
@@ -417,10 +417,10 @@ body.overlay-open #video-container {
 .social-list .social.email a {
   text-align: center;
 }
-.social-list .resume a:hover {
+.social-list .email a:hover {
   background: #e55;
 }
-.social-list .resume a:hover:before {
+.social-list .email a:hover:before {
   background: rgba(238,85,85,0.4);
 }
 .social-list .email a .social-icon {
@@ -729,6 +729,7 @@ body.loaded #work {
   display: none;
 }
 .work-list {
+  border: 1px solid rgba(0,0,0,0.1);
   margin: 0;
   padding: 0;
   position: relative;
@@ -743,11 +744,9 @@ body.loaded #work {
   clear: both;
 }
 .work-list .work {
-  background: rgba(3,3,3,0.2) center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-  border: 1px solid rgba(0,0,0,0.1);
   display: block;
   float: left;
   font-size: 14px;
@@ -757,7 +756,7 @@ body.loaded #work {
   filter: none;
   overflow: hidden;
   position: relative;
-  width: 33.33%;
+  width: 33.333333333333336%;
   text-align: center;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -766,26 +765,9 @@ body.loaded #work {
   transition: all 0.2s ease-in-out;
 }
 .work-list .work:before {
-  bottom: 0;
-  content: '';
-  display: block;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 1;
-}
-.work-list .work:after {
   content: '';
   display: block;
   padding-bottom: 75%;
-}
-.work-list .work:hover {
-  -webkit-background-size: auto 120%;
-  -moz-background-size: auto 120%;
-  background-size: auto 120%;
-  -webkit-filter: blur(10px);
-  filter: blur(10px);
 }
 @media screen and (max-width: 1200px) {
   .work-list .work {
@@ -796,6 +778,18 @@ body.loaded #work {
   .work-list .work {
     width: 100%;
   }
+}
+.work-list .work a {
+  bottom: 0;
+  display: block;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.work-list .work a img {
+  width: 100%;
 }
 #article-header {
   margin: 80px 0 100px;

@@ -45,14 +45,18 @@ body
 
 // Portfolio work list
 .work-list
+	border:1px solid $borderColor
+	//border-bottom:none
+	//border-right:none
 	margin:0
 	padding:0
 	position:relative
 	clearfix()
 	.work
-		background:rgba(3,3,3,0.2) center
 		background-size:cover
-		border:1px solid rgba(0,0,0,0.1)
+		//border:1px solid $borderColor
+		//border-left:none
+		//border-top:none
 		display:block
 		float:left
 		font-size:14px
@@ -60,27 +64,24 @@ body
 		opacity:1
 		overflow:hidden
 		position:relative
-		width:33.33%
+		width:(100/3)%
 		text-align:center
 		transition:all 0.2s ease-in-out
 		&:before
-			bottom:0
-			content:''
-			display:block
-			left:0
-			position:absolute
-			right:0
-			top:0
-			z-index:1
-		&:after
 			content:''
 			display:block
 			padding-bottom:75%
-		&:hover
-			background-size:auto 120%
-			-webkit-filter:blur(10px)
-			filter:blur(10px)
 		@media $device-lrg
 			width:50%
 		@media $device-sm
 			width:100%
+		a
+			bottom:0
+			display:block
+			left:0
+			overflow:hidden
+			position:absolute
+			right:0
+			top:0
+			img
+				width:100%
