@@ -1,20 +1,27 @@
+/*!
+ * /components/spinner.styl
+ * 
+ * Styling and animation for loading icon
+ *
+ */
+ 
 .spinner
 	display:inline-block
 	width:70px
 	vertical-align:middle
 	> div
-		width: 18px
-		height: 18px
-		background-color: #333
+		width:18px
+		height:18px
+		background-color:$textColor
 
-		border-radius: 100%
-		display: inline-block
-		animation: bouncedelay 1.4s infinite ease-in-out
-		animation-fill-mode: both
+		border-radius:100%
+		display:inline-block
+		animation:bouncedelay 1.4s infinite ease-in-out
+		animation-fill-mode:both
 	.bounce1
-		animation-delay: -0.32s
+		animation-delay:-0.32s
 	.bounce2
-		animation-delay: -0.16s
+		animation-delay:-0.16s
 
 
 @-webkit-keyframes bouncedelay

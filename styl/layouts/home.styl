@@ -1,3 +1,10 @@
+/*!
+ * /layouts/home.styl
+ * 
+ * Styling for homepage
+ *
+ */
+
 body
 	&.loaded
 		#page-loader
@@ -11,7 +18,7 @@ body
 				transform:translate3d(0,0,0)
 				opacity:1
 				visibility:visible 
-		#work
+		.work
 			opacity:1
 			transform:translate3d(0,0,0)
 			visibility:visible
@@ -33,58 +40,3 @@ body
 		transition-delay:1.2s
 	ul
 		transition-delay:1.5s
-		
-#work
-	opacity:0
-	transform:translate3d(0,20vh,0)
-	transition:all 0.5s ease-in-out
-	transition-delay:2s
-	visibility:hidden
-	header
-		display:none
-
-// Portfolio work list
-.work-list
-	border:1px solid $borderColor
-	//border-bottom:none
-	//border-right:none
-	margin:0
-	padding:0
-	position:relative
-	@media $device-sm
-		border-left:none
-		border-right:none
-	clearfix()
-	.work
-		background-size:cover
-		//border:1px solid $borderColor
-		//border-left:none
-		//border-top:none
-		display:block
-		float:left
-		font-size:14px
-		margin:0
-		opacity:1
-		overflow:hidden
-		position:relative
-		width:(100/3)%
-		text-align:center
-		transition:all 0.2s ease-in-out
-		&:before
-			content:''
-			display:block
-			padding-bottom:75%
-		@media $device-lrg
-			width:50%
-		@media $device-sm
-			width:100%
-		a
-			bottom:0
-			display:block
-			left:0
-			overflow:hidden
-			position:absolute
-			right:0
-			top:0
-			img
-				width:100%

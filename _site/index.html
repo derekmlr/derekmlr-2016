@@ -4,13 +4,13 @@
 
 <!-- Meta data -->
 <meta charset="utf-8">
-<meta name="description" content="Portfolio website of Derek Narler">
+<meta name="description" content="5+ years experience · UI/UX Designer · Frontend Engineer">
 <meta name="author" content="Derek Marler">
 <meta name="keywords" content="derek, marler, interface, design, designer, js, css, html, photoshop, sketch">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/ico" href="/img/favicon.png">
 
-<title>Derek Marler  - Interface Designer</title>
+<title>Derek Marler - Interface Designer</title>
 
 <!-- Fonts -->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:600,400,300' rel='stylesheet' type='text/css'>
@@ -83,57 +83,56 @@
 
 <main id="content" role="main">
 <div class="inner">
-	<section id="work">
+	<section class="work">
 	<ol class="work-list other-list">
 		<li class="work">
-			<a href="https://dribbble.com/shots/2443070-Guidebook-Builder-Redesign">
+			<span>
 				<img src="/p/guidebook-builder.png">
-			</a>
+			</span>
 		</li>
 		<li class="work">
-			<a href="https://dribbble.com/shots/1961615--Watch-Sketch-Freebie">
+			<span>
 				<img src="/p/freebie-applewatch.png">
-			</a>
+			</span>
 		</li>
 		<li class="work">
-			<a href="#">
+			<span>
 				<img src="/p/concept-firefox.png">
-			</a>
+			</span>
 		</li>
 
 		<li class="work">
-			<a href="#">
+			<span>
 				<img src="/p/guidebook-guidebot.png">
-			</a>
+			</span>
 		</li>
 		<li class="work">
-			<a href="#">
+			<span>
 				<img src="/p/guidebook-chat.png">
-			</a>
+			</span>
 		</li>
 		<li class="work">
-			<a href="#">
+			<span>
 				<img src="/p/wepay-forms.png">
-			</a>
+			</span>
 		</li>
 
 		<li class="work">
-			<a href="#">
+			<span>
 				<img src="/p/concept-steam.png">
-			</a>
+			</span>
 		</li>
 		<li class="work">
-			<a href="#">
+			<span>
 				<img src="/p/wepay-icons.png">
-			</a>
+			</span>
 		</li>
 		<li class="work">
-			<a href="#">
+			<span>
 				<img src="/p/wepay-mobile.png">
-			</a>
+			</span>
 		</li>
 	</ol>
-	<div id="work-preview"></div>
 </section>
 </div>
 </main>
@@ -181,15 +180,15 @@
 
 </div>
 
-<div id="overlay">
-	<div id="overlay-content">
-		<p>Testing this overlay thing</p>
-	</div>
-	<a href='#' id="overlay-close" class="close">&times;</a>
-</div>
-
-<script src="/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="/js/script.js" type="text/javascript" charset="utf-8"></script>
+<script>
+// Do welcome animation when loaded
+window.onload = function() {
+	// Minimum 1 second wait
+	setTimeout(function() {
+		document.getElementsByTagName('body')[0].className+=' loaded'
+	},1000);
+}
+</script>
 
 </body>
 </html>
