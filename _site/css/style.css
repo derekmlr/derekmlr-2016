@@ -362,7 +362,8 @@ body.overlay-open #video-container {
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-.social-list .social a:hover {
+.social-list .social a:hover,
+.social-list .social a:focus {
   background: #313132;
   border-color: transparent;
   color: #fff;
@@ -372,20 +373,23 @@ body.overlay-open #video-container {
   -ms-transform: scale(0.9);
   transform: scale(0.9);
 }
-.social-list .social a:hover:before {
+.social-list .social a:hover:before,
+.social-list .social a:focus:before {
   bottom: -15%;
   left: -15%;
   right: -15%;
   top: -15%;
 }
-.social-list .social a:hover .social-icon {
+.social-list .social a:hover .social-icon,
+.social-list .social a:focus .social-icon {
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
   -o-transform: scale(1.2);
   -ms-transform: scale(1.2);
   transform: scale(1.2);
 }
-.social-list .social a:hover .social-icon path {
+.social-list .social a:hover .social-icon path,
+.social-list .social a:focus .social-icon path {
   fill: #fff;
 }
 .social-list .social a .social-icon {
@@ -417,20 +421,24 @@ body.overlay-open #video-container {
 .social-list .social.email a {
   text-align: center;
 }
-.social-list .email a:hover {
-  background: #e55;
-}
-.social-list .email a:hover:before {
-  background: rgba(238,85,85,0.4);
-}
 .social-list .email a .social-icon {
   margin-top: -9px;
   width: 28px;
 }
-.social-list .twitter a:hover {
+.social-list .email a:hover,
+.social-list .email a:focus {
+  background: #e55;
+}
+.social-list .email a:hover:before,
+.social-list .email a:focus:before {
+  background: rgba(238,85,85,0.4);
+}
+.social-list .twitter a:hover,
+.social-list .twitter a:focus {
   background: #55acee;
 }
-.social-list .twitter a:hover:before {
+.social-list .twitter a:hover:before,
+.social-list .twitter a:focus:before {
   background: rgba(85,172,238,0.4);
 }
 .social-list .linkedin a {
@@ -439,20 +447,24 @@ body.overlay-open #video-container {
 .social-list .linkedin a .social-icon {
   margin-top: -12px;
 }
-.social-list .linkedin a:hover {
+.social-list .linkedin a:hover,
+.social-list .linkedin a:focus {
   background: #0077b5;
 }
-.social-list .linkedin a:hover:before {
+.social-list .linkedin a:hover:before,
+.social-list .linkedin a:focus:before {
   background: rgba(0,119,181,0.4);
 }
 .social-list .dribbble a .social-icon {
   margin-top: -16px;
   width: 32px;
 }
-.social-list .dribbble a:hover {
+.social-list .dribbble a:hover,
+.social-list .dribbble a:focus {
   background: #ec4989;
 }
-.social-list .dribbble a:hover:before {
+.social-list .dribbble a:hover:before,
+.social-list .dribbble a:focus:before {
   background: rgba(236,73,137,0.4);
 }
 .spinner {

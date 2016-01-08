@@ -37,7 +37,8 @@
 				right:50%
 				top:50%
 				transition:all 0.2s ease-in-out
-			&:hover
+			&:hover,
+			&:focus
 				background:#313132
 				border-color:transparent
 				color:#fff
@@ -72,18 +73,18 @@
 .social-list
 	.email
 		a
-			&:hover
-				background:#EE5555
-				&:before
-					background:rgba(#EE5555,0.4)
-	.email
-		a
 			.social-icon
 				margin-top:-9px
 				width:28px
+			&:hover,
+			&:focus
+				background:#EE5555
+				&:before
+					background:rgba(#EE5555,0.4)
 	.twitter 
 		a
-			&:hover
+			&:hover,
+			&:focus
 				background:#55acee
 				&:before
 					background:rgba(#55acee,0.4)
@@ -92,7 +93,8 @@
 			padding-left:2px
 			.social-icon
 				margin-top:-12px
-			&:hover
+			&:hover,
+			&:focus
 				background:#0077B5
 				&:before
 					background:rgba(#0077B5,0.4)
@@ -101,7 +103,8 @@
 			.social-icon
 				margin-top:-16px
 				width:32px
-			&:hover
+			&:hover,
+			&:focus
 				background:#EC4989
 				&:before
 					background:rgba(#EC4989,0.4)
